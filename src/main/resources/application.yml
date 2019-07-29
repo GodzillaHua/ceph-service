@@ -1,0 +1,5 @@
+ceph:
+  admin:
+    endpoint: http://172.20.116.155:7480/admin
+    access-key: ICEK2OLI1B0VQ09R5RHG
+    secret-key: XIWpFZuf3IRW7j1O2OAhMTN5MSMFoecYYu2bcRmI
