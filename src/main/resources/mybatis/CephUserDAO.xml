@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.cat.ceph.dao.CephUserDAO">
+    <resultMap id="cephUserResultMap" type="io.cat.ceph.domain.CephUser">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="display_name" property="displayName"/>
+        <result column="email" property="email"/>
+        <result column="access_key" property="accessKey"/>
+        <result column="secret_key" property="secretKey"/>
+        <result column="suspend" property="suspend"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+</mapper>

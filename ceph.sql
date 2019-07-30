@@ -1,0 +1,13 @@
+use ceph;
+DROP TABLE IF EXISTS t_ceph_user;
+CREATE TABLE t_ceph_user(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL ,
+    display_name VARCHAR(20) NOT NULL,
+    email VARCHAR(128) DEFAULT '',
+    access_key VARCHAR(128) NOT NULL ,
+    secret_key VARCHAR(128) NOT NULL ,
+    suspend TINYINT DEFAULT 0,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
