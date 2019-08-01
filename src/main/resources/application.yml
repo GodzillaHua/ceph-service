@@ -10,6 +10,9 @@ spring:
     password: 12qw!@QW
 mybatis:
   mapper-locations: classpath:mybatis/**/*.xml
+
 logging:
   level:
     io.cat.ceph.dao: debug
+    io.cat.ceph.dao.CephUserDAO.getCephUserByName: error
+    io.cat.ceph.dao.CephUserDAO.getAll: error

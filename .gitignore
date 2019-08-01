@@ -29,4 +29,5 @@ __MACOS
 .settings
 .classpath
 .project
+target
 

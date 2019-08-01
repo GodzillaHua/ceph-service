@@ -46,15 +46,11 @@ public class Result<T> {
     }
 
     public static <T> Result<T> ok() {
-        return ok(null, null);
+        return ok(null);
     }
 
-    public static <T> Result<T> ok(String message) {
-        return ok(message, null);
-    }
-
-    public static <T> Result<T> ok(String message, T data) {
-        return result(DEFAULT_SUCCESS_CODE, message, data);
+    public static <T> Result<T> ok(T data) {
+        return result(DEFAULT_SUCCESS_CODE, null, data);
     }
 
     public static <T> Result<T> error(String message) {
@@ -63,7 +59,7 @@ public class Result<T> {
 
     static <T> Result<T> result(Integer code, String message, T data) {
         Result<T> result = new Result<>();
-        result.setCode(DEFAULT_SUCCESS_CODE);
+        result.setCode(code);
         result.setMessage(message);
         result.setData(data);
         return result;

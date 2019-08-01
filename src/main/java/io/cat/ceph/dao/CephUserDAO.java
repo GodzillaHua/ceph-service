@@ -4,6 +4,8 @@ import io.cat.ceph.dao.mybatis.providers.CephUserDAOSqlProvider;
 import io.cat.ceph.domain.CephUser;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 /**
  * @author GodzillaHua
  **/
@@ -18,6 +20,13 @@ public interface CephUserDAO {
     void saveCephUser(CephUser cephUser);
 
     @UpdateProvider(type = CephUserDAOSqlProvider.class, method = "updateCephUserSql")
-    void updateCeph(CephUser cephUser);
+    void updateCephUser(CephUser cephUser);
+
+    @Select("SELECT * FROM " + TableNames.CEPH_USER_TALBLE)
+    @ResultMap("cephUserResultMap")
+    List<CephUser> getAll();
+
+    @Delete("DELETE FROM " + TableNames.CEPH_USER_TALBLE + " WHERE id = #{id}")
+    void deleteCephUser(@Param("id") Integer id);
 
 }
